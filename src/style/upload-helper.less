@@ -1,0 +1,26 @@
+@import url(./color.less);
+@import url(./size.less);
+
+.mp-upload-helper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 4px;
+  background-color: @grey0;
+  border: 1px dashed @grey5;
+
+  .icon-upload-helper-add {
+    width: 25px;
+    height: 25px;
+  }
+
+  input {
+    position: absolute;
+    width: 0;
+    height: 0;
+    z-index: -1;
+  }
+}

@@ -1,0 +1,29 @@
+@import url(./color.less);
+@import url(./size.less);
+
+.mp-button {
+  box-sizing: border-box;
+  padding: 0 20px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: @grey1;
+  font-size: @font-larger;
+  white-space: nowrap;
+  background-color: @subject-normal;
+  border: 0;
+  outline: none;
+
+  &.round {
+    border-radius: 20px;
+  }
+}
+
+.mp-button-normal {
+  &.plain {}
+
+  &.disabled {
+    background-color: @grey5;
+    color: #fff;
+  }
+}

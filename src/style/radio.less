@@ -1,0 +1,51 @@
+@import url(./color.less);
+@import url(./size.less);
+
+.mp-radio-wrapper {
+  position: relative;
+
+  .mp-radio-normal {
+    display: flex;
+    align-items: center;
+
+    .ring {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 18px;
+      height: 18px;
+      box-sizing: border-box;
+      border: 1px solid @grey2;
+      border-radius: 50%;
+      margin-right: 15px;
+    }
+  }
+
+  .mp-radio-tag {
+    display: inline-flex;
+    align-items: center;
+    height: 32px;
+    box-sizing: border-box;
+    border: 1px solid @grey4;
+    border-radius: 16px;
+    padding: 0 12px;
+  }
+
+  .mp-radio-normal_active>.ring {
+    border-color: @subject-dark;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: @subject-dark;
+    }
+  }
+
+  .mp-radio-tag_active {
+    border-color: @subject-normal;
+    background-color: @subject-light;
+  }
+}

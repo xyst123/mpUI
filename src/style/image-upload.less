@@ -1,0 +1,58 @@
+@import url(./color.less);
+@import url(./size.less);
+
+.mp-image-upload {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 104px;
+  height: 80px;
+  background-color: @grey0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .mp-image-upload-tip {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 38px;
+
+    .icon-image-upload-uploading {
+      width: 26px;
+      height: 18px;
+    }
+
+    .icon-image-upload-fail {
+      width: 20px;
+      height: 20px;
+    }
+
+    p {
+      font-size: @font-smaller;
+      line-height: @font-normal;
+      height: @font-normal;
+      color: @grey2;
+    }
+  }
+
+  .icon-input-close {
+    position: absolute;
+    top: -8px;
+    right: -3px;
+    width: 16px;
+    height: 16px;
+  }
+
+  input {
+    position: absolute;
+    width: 0;
+    height: 0;
+    z-index: -1;
+  }
+}

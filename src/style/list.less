@@ -1,0 +1,29 @@
+@import url(./color.less);
+@import url(./size.less);
+
+.mp-list {
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  &.mp-list_scroll {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .mp-list-items-wrapper {
+    position: relative;
+
+    .mp-list-items {
+      position: absolute;
+
+      .mp-list-item {
+        transition: opacity 0.5s;
+      }
+    }
+
+    .mp-list-pool {
+      position: absolute;
+      top: -1000px;
+      visibility: hidden;
+    }
+  }
+}

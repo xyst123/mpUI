@@ -1,0 +1,48 @@
+@import url(./color.less);
+@import url(./size.less);
+
+.mp-text {
+  position: relative;
+
+  .content {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
+  }
+
+  .real-content {
+    position: relative;
+    z-index: 1;
+    background-color: #fff;
+  }
+
+  .fake-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-overflow: ellipsis;
+  }
+
+  .hidden-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  .icon-text-triangle {
+    position: absolute;
+    bottom: 7px;
+    right: 8px;
+    width: 12px;
+    height: 7px;
+    z-index: 2;
+    transition: transform 0.2s;
+
+    &.rotate {
+      transform: rotate(180deg);
+    }
+  }
+}

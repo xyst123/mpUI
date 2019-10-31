@@ -1,0 +1,59 @@
+@import url(./color.less);
+@import url(./size.less);
+
+.mp-input {
+  position: relative;
+  flex: 1;
+
+  input,
+  textarea {
+    width: 100%;
+    font-size: @font-normal;
+    color: @grey1;
+    background-color: @grey0;
+    outline: none;
+    border: 0;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+    &::-webkit-input-placeholder {
+      color: @grey2;
+    }
+
+    &::-moz-placeholder {
+      color: @grey2;
+    }
+
+    &:-ms-input-placeholder {
+      color: @grey2;
+    }
+  }
+
+  input {
+    height: 34px;
+    padding: 9px 28px 9px 14px;
+  }
+
+  i {
+    position: absolute;
+    top: 10px;
+    right: 8px;
+    width: 14px;
+    height: 14px;
+  }
+
+  textarea {
+    height: 127px;
+    line-height: 20px;
+    padding: 11px 13px;
+    resize: none;
+  }
+
+  .mp-input-counter {
+    margin-top: 8px;
+    text-align: right;
+    line-height: 17px;
+    color: @grey2;
+    font-size: @font-small;
+  }
+}

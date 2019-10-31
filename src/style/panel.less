@@ -1,0 +1,39 @@
+@import url(./color.less);
+@import url(./size.less);
+
+.mp-panel-wrapper {
+  margin-top: 20px;
+
+  .mp-panel-wrap {
+    .mp-panel-title {
+      display: flex;
+      align-items: center;
+      height: 20px;
+      margin-bottom: 10px;
+
+      h3 {
+        font-size: @font-normal;
+        font-weight: bold;
+      }
+
+      p {
+        font-size: @font-small;
+        margin-left: auto;
+        color: @error;
+      }
+    }
+  }
+
+  .mp-panel {
+    display: flex;
+
+    .mp-panel-label {
+      min-width: 56px;
+      height: 20px;
+      line-height: 20px;
+      margin-top: 7px;
+      color: @grey1;
+      font-size: @font-normal;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@import url(./color.less);
+@import url(./size.less);
+
+.mp-board {
+  box-sizing: border-box;
+  padding: 0 12px 20px 12px;
+  background-color: #fff;
+  border-radius: 8px;
+  margin-top: 12px;
+
+  .mp-board-title {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    border-bottom: 1px solid @grey3;
+
+    h3 {
+      font-size: @font-normal;
+      font-weight: bold;
+    }
+
+    p {
+      font-size: @font-small;
+      margin-left: auto;
+      color: @error;
+    }
+  }
+}

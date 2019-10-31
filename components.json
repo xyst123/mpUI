@@ -1,0 +1,16 @@
+{
+  "input": "./src/components/Input/index.js",
+  "panel": "./src/components/Panel/index.js",
+  "board": "./src/components/Board/index.js",
+  "radio": "./src/components/Radio/index.js",
+  "radio-group": "./src/components/RadioGroup/index.js",
+  "check": "./src/components/Check/index.js",
+  "check-group": "./src/components/CheckGroup/index.js",
+  "button": "./src/components/Button/index.js",
+  "upload-helper": "./src/components/UploadHelper/index.js",
+  "image-upload": "./src/components/ImageUpload/index.js",
+  "text": "./src/components/Text/index.js",
+  "slider": "./src/components/Slider/index.js",
+  "list": "./src/components/List/index.js",
+  "message": "./src/components/Message/index.js"
+}
