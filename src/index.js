@@ -29,9 +29,9 @@ const components = [
   MpList
 ]
 
-function install(Vue, option = {}) {
+function install(Vue) {
   Vue.prototype.$message = Message;
-  components.forEach(component => {
+  components.forEach((component) => {
     Vue.component(component.name, component);
   });
 }

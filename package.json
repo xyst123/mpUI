@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:test": "rimraf dist && cross-env NODE_ENV=test webpack --config build/webpack.main.js && cross-env NODE_ENV=test webpack --config build/webpack.component.js && gulp --gulpfile gulpfile.js",
-    "build:prod": "rimraf dist && cross-env NODE_ENV=prod webpack --config build/webpack.main.js && cross-env NODE_ENV=prod webpack --config build/webpack.component.js && gulp --gulpfile gulpfile.js"
+    "docs:dev": "vuepress dev docs",
+    "build:test": "rimraf dist && cross-env NODE_ENV=test webpack --config build/webpack.index.js && cross-env NODE_ENV=test webpack --config build/webpack.full.js && cross-env NODE_ENV=test webpack --config build/webpack.component.js && gulp --gulpfile gulpfile.js",
+    "build:prod": "rimraf dist && cross-env NODE_ENV=prod webpack --config build/webpack.index.js && cross-env NODE_ENV=prod webpack --config build/webpack.full.js && cross-env NODE_ENV=prod webpack --config build/webpack.component.js && gulp --gulpfile gulpfile.js"
   },
   "engines": {
     "node": ">=7.0",
@@ -25,6 +26,7 @@
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-clean-css": "^4.2.0",
+    "gulp-css-base64": "^1.3.4",
     "gulp-less": "^4.0.1",
     "gulp-postcss": "^8.0.0",
     "postcss-px-to-viewport": "^1.1.1",
@@ -33,6 +35,7 @@
     "url-loader": "^2.2.0",
     "vue-loader": "^15.7.1",
     "vue-template-compiler": "^2.6.10",
+    "vuepress": "^1.2.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.9",
     "webpack-merge": "^4.2.2",
