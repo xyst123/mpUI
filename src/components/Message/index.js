@@ -5,7 +5,7 @@ const MessageConstructor = Vue.extend(require('./Message.vue').default);
 let index = 0;
 
 export default (options) => {
-  const id = `message-${index++}`;
+  const id = `message-${index += 1}`;
   options = options || {};
   const MessageInstance = new MessageConstructor({
     data: options

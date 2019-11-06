@@ -5,34 +5,34 @@
       :style="{'max-height':`${maxHeight}px`,'line-height':`${lineHeight}px`}"
       class="content real-content"
       v-html="content"
-    ></p>
+    />
 
     <p
       v-if="isOverflow && !stretch"
       :style="{'line-height':`${lineHeight}px`,'-webkit-line-clamp': limitRow,'padding-right':`${endIndent}em`,'text-indent':`${-1*endIndent*(limitRow-1)}em`}"
       class="content fake-content"
       v-html="content"
-    ></p>
+    />
 
     <p
       ref="hidden-text"
       :style="{'max-height':`${(limitRow-1)*lineHeight}px`, 'line-height': `${lineHeight}px`}"
       class="content hidden-content"
       v-html="hiddenContent"
-    ></p>
+    />
 
-    <i v-if="isOverflow" :class="{'icon-text-triangle':true,rotate:stretch}" @click="toggleStretch"></i>
+    <i v-if="isOverflow" :class="{'icon-text-triangle':true,rotate:stretch}" @click="toggleStretch" />
   </div>
 </template>
 
 <script>
 export default {
-  name: "mp-text",
-  componentName: "MPText",
+  name: 'mp-text',
+  componentName: 'MPText',
   props: {
     content: {
       type: String,
-      default: ""
+      default: ''
     },
     limitRow: {
       type: Number,
@@ -57,7 +57,7 @@ export default {
   },
   computed: {
     hiddenContent() {
-      return "  " + this.content;
+      return `  ${  this.content}`;
     },
     maxHeight() {
       if (!this.isOverflow) {
@@ -80,17 +80,16 @@ export default {
     }
   },
   watch: {
-    content(content) {
+    content() {
       this.$nextTick(() => {
         let DOM = this.$refs.text;
-        let hiddenDOM = this.$refs["hidden-text"];
+        let hiddenDOM = this.$refs['hidden-text'];
         if (DOM && hiddenDOM) {
           const DOMScrollHeight = DOM.scrollHeight;
           const DOMClientHeight = DOM.clientHeight;
           this.realHeight = DOMScrollHeight;
           const hiddenDOMScrollHeight = hiddenDOM.scrollHeight;
-          this.isOverflow =
-            DOMScrollHeight - DOMClientHeight > this.lineHeight * 0.5;
+          this.isOverflow = DOMScrollHeight - DOMClientHeight > this.lineHeight * 0.5;
           this.willCover = hiddenDOMScrollHeight - DOMScrollHeight > 0;
           DOM = null;
           hiddenDOM = null;
@@ -101,7 +100,7 @@ export default {
   methods: {
     toggleStretch() {
       this.stretch = !this.stretch;
-      this.$emit("toggleChange", this.stretch);
+      this.$emit('toggleChange', this.stretch);
     }
   }
 };

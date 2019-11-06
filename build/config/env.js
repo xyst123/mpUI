@@ -7,7 +7,6 @@ module.exports = {
     plugins: [
       new FriendlyErrorsPlugin(),
     ],
-
   },
   prod: {
     mode: 'production',

@@ -4,19 +4,20 @@
   </div>
 </template>
 <script>
-import emitter from "@/mixins/emitter";
+import emitter from '@/mixins/emitter';
+
 export default {
-  name: "mp-radio-group",
-  componentName: "MPRadioGroup",
+  name: 'mp-radio-group',
+  componentName: 'MPRadioGroup',
   mixins: [emitter],
   model: {
-    prop: "value",
-    event: "radio"
+    prop: 'value',
+    event: 'radio'
   },
   props: {
     value: {
       type: null,
-      default: ""
+      default: ''
     }
   },
   computed: {}

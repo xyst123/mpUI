@@ -4,14 +4,15 @@
   </div>
 </template>
 <script>
-import emitter from "@/mixins/emitter";
+import emitter from '@/mixins/emitter';
+
 export default {
-  name: "mp-check-group",
-  componentName: "MPCheckGroup",
+  name: 'mp-check-group',
+  componentName: 'MPCheckGroup',
   mixins: [emitter],
   model: {
-    prop: "value",
-    event: "check"
+    prop: 'value',
+    event: 'check'
   },
   props: {
     value: {
@@ -22,4 +23,3 @@ export default {
   computed: {}
 };
 </script>
-

@@ -1,19 +1,21 @@
 <template>
-  <div @click="handleClick" :class="{'mp-check':true}">
-    <i v-if="realChecked" class="icon-check-check"></i>
-    <div v-else class="ring"></div>
-    <slot />
+  <div class="mp-check" @click="handleClick">
+    <div :class="['mp-check-ring',{'mp-check-ring__active':realChecked}]">
+      <i v-if="realChecked" class="icon-check-check" />
+    </div>
+    <span v-if="label" class="mp-check-label">{{ label }}</span>
   </div>
 </template>
 <script>
-import emitter from "@/mixins/emitter";
+import emitter from '@/mixins/emitter';
+
 export default {
-  name: "mp-check",
-  componentName: "MPCheck",
+  name: 'mp-check',
+  componentName: 'MPCheck',
   mixins: [emitter],
   model: {
-    prop: "checked",
-    event: "check"
+    prop: 'checked',
+    event: 'check'
   },
   props: {
     checked: {
@@ -22,19 +24,18 @@ export default {
     },
     value: {
       type: null,
-      default: ""
-    }
-  },
-  created() {
-    if (this.checked) {
-      this.setValue(this.value, "add");
+      default: ''
+    },
+    label: {
+      type: String,
+      default: ''
     }
   },
   computed: {
     CheckGroup() {
       let parent = this.$parent;
       while (parent) {
-        if (parent.$options.componentName !== "MPCheckGroup") {
+        if (parent.$options.componentName !== 'MPCheckGroup') {
           parent = parent.$parent;
         } else {
           return parent;
@@ -49,31 +50,32 @@ export default {
       return this.checked;
     }
   },
+  created() {
+    if (this.checked) {
+      this.setValue(this.value, 'add');
+    }
+  },
   methods: {
-    setValue(value, type) {
+    setValue(value) {
       if (this.CheckGroup) {
         let currentValue;
         const index = this.CheckGroup.value.indexOf(value);
         if (index === -1) {
-          if (type !== "delete") {
-            currentValue = [...this.CheckGroup.value, this.value];
-          }
+          currentValue = [...this.CheckGroup.value, this.value];
         } else {
-          if (type !== "add") {
-            currentValue = [...this.CheckGroup.value].splice(index, 1);
-          }
+          currentValue = [...this.CheckGroup.value];
+          currentValue.splice(index, 1);
         }
-        this.dispatch("MPCheckGroup", "check", [currentValue]);
+        this.dispatch('MPCheckGroup', 'check', [currentValue]);
       }
     },
     handleClick() {
       if (this.CheckGroup) {
-        this.setValue(this.value, "add");
+        this.setValue(this.value);
       } else {
-        this.$emit("check", !this.checked);
+        this.$emit('check', !this.checked);
       }
     }
   }
 };
 </script>
-

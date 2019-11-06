@@ -1,27 +1,31 @@
 <template>
   <label class="mp-image-upload">
-    <div class="mp-image-upload-tip" v-if="status===1">
-      <i class="icon-image-upload-uploading"></i>
+    <div v-if="status===1" class="mp-image-upload-tip">
+      <i class="icon-image-upload-uploading" />
       <p>图片上传中...</p>
     </div>
-    <div class="mp-image-upload-tip" v-else-if="status===3">
-      <i class="icon-image-upload-fail"></i>
-      <p>{{failMessage}}</p>
+    <div v-else-if="status===3" class="mp-image-upload-tip">
+      <i class="icon-image-upload-fail" />
+      <p>{{ failMessage }}</p>
     </div>
-    <img v-else :src="image" alt />
-    <i class="icon-input-close" @click.stop="handleDelete"></i>
-    <input type="file" v-bind="$attrs" @change="handleFileChange" />
+    <img v-else :src="image" alt>
+    <i class="icon-input-close" @click.stop="handleDelete">
+      <span class="path1" />
+      <span class="path2" />
+    </i>
+    <input type="file" v-bind="$attrs" @change="handleFileChange">
   </label>
 </template>
 <script>
-import { upload } from "@/utils";
+import { upload } from '@/utils';
+
 export default {
-  name: "mp-image-upload",
-  componentName: "MPImageUpload",
+  name: 'mp-image-upload',
+  componentName: 'MPImageUpload',
   props: {
     image: {
       type: String,
-      default: ""
+      default: ''
     },
     url: {
       type: String,
@@ -29,39 +33,45 @@ export default {
     },
     method: {
       type: String,
-      default: "POST"
+      default: 'POST'
     },
-    file: {},
+    file: {
+      type: null,
+      default: null
+    },
     name: {
       type: String,
-      default: "file"
+      default: 'file'
     },
-    data: {},
+    data: {
+      type: null,
+      default: null
+    },
     beforeUpload: {
       type: Function,
-      default: function() {}
+      default() {}
     },
     onInvoke: {
       type: Function,
-      default: function() {}
+      default() {}
     },
     onSuccess: {
       type: Function,
-      default: function() {}
+      default() {}
     },
     onFail: {
       type: Function,
-      default: function() {}
+      default() {}
     },
     onDelete: {
       type: Function,
-      default: function() {}
+      default() {}
     }
   },
   data() {
     return {
       status: 2,
-      failMessage: ""
+      failMessage: ''
     };
   },
   created() {
@@ -103,7 +113,7 @@ export default {
           }
         }
       } catch (error) {
-        this.failMessage = "图片上传失败";
+        this.failMessage = '图片上传失败';
         this.status = 3;
         this.onFail(error, file, this.data);
       }

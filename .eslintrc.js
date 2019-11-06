@@ -1,16 +1,17 @@
 module.exports = {
     "env": {
+        "mocha": true,
         "browser": true,
         "es6": true,
         "node": true
     },
     "extends": [
         "airbnb-base",
-        //   "plugin:vue/recommended"
+        "plugin:vue/recommended"
     ],
     "globals": {
-        "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
+        "expect": true,
+        "sinon": true
     },
     "parserOptions": {
         "parser": "babel-eslint",
@@ -30,6 +31,12 @@ module.exports = {
         "indent": ["error", 2],
         "comma-dangle": 0,
         "import/prefer-default-export": 0,
-        "import/no-extraneous-dependencies": 0
+        "import/no-extraneous-dependencies": 0,
+        "no-param-reassign": 0,
+        "radix":0,
+        "no-unused-expressions": 0,
+        "vue/name-property-casing": 0,
+        "import/no-unresolved": 0,
+        "vue/no-v-html": 0
     }
 };

@@ -1,13 +1,13 @@
 const path = require('path');
 // const fs = require('fs');
 const nodeExternals = require('webpack-node-externals');
-const components = require('../components.json');
-const config = require('../build/config');
+const components = require('../../components.json');
+const config = require('../config/env');
 
 const env = process.env.NODE_ENV || 'test';
 
 function resolve(file) {
-  return path.resolve(__dirname, '../', file);
+  return path.resolve(__dirname, '../../', file);
 }
 
 // const mixinsList = fs.readdirSync(resolve('./src/mixins'));

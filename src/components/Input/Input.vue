@@ -10,7 +10,7 @@
         @focus="handleFocus"
         @blur="$emit('blur')"
         @change="$emit('change')"
-      ></textarea>
+      />
     </template>
     <template v-else>
       <input
@@ -23,31 +23,37 @@
         @focus="handleFocus"
         @blur="$emit('blur')"
         @change="$emit('change')"
-      />
-      <i v-if="value" class="icon-input-close" @click="clear"></i>
+      >
+      <i v-if="value" class="icon-input-close" @click="clear">
+        <span class="path1" />
+        <span class="path2" />
+      </i>
     </template>
-    <p class="mp-input-counter" v-if="maxlength>0 && count">{{`${currentLength}/${maxlength}`}}</p>
+    <p v-if="maxlength>0 && count" class="mp-input-counter">
+      {{ `${currentLength}/${maxlength}` }}
+    </p>
   </div>
 </template>
 <script>
-import { getLimitedString } from "@/utils";
-import { clearTimeout } from "timers";
+import { clearTimeout } from 'timers';
+import { getLimitedString } from '@/utils';
+
 let timer = null;
 export default {
-  name: "mp-input",
-  componentName: "MPInput",
+  name: 'mp-input',
+  componentName: 'MPInput',
   model: {
-    prop: "value",
-    event: "input"
+    prop: 'value',
+    event: 'input'
   },
   props: {
     type: {
       type: String,
-      default: "input"
+      default: 'input'
     },
     value: {
       type: String,
-      default: ""
+      default: ''
     },
     maxlength: {
       type: Number,
@@ -73,22 +79,22 @@ export default {
   },
   methods: {
     clear() {
-      this.$emit("input", "");
+      this.$emit('input', '');
     },
-    handleFocus(event) {
-      this.$emit("focus");
+    handleFocus() {
+      this.$emit('focus');
       if (timer) {
         clearTimeout(timer);
       }
       timer = setTimeout(() => {
-        const input = this.$refs.input;
+        const { input } = this.$refs;
         const position = input.getBoundingClientRect();
-        const { top, bottom } = position;
+        const { bottom } = position;
         const { innerHeight } = window;
         console.log(bottom, innerHeight);
         if (bottom > innerHeight) {
           input.scrollIntoView({
-            behavior: "smooth"
+            behavior: 'smooth'
           });
         }
         timer = null;
@@ -108,7 +114,7 @@ export default {
       const string = event.target.value;
       const stringInfo = getLimitedString(string, this.maxlength);
       this.currentLength = stringInfo.length;
-      this.$emit("input", stringInfo.result);
+      this.$emit('input', stringInfo.result);
       if (event.target.value !== stringInfo.result) {
         // vm.props.value更新，不会自动触发输入框文本更新
         event.target.value = stringInfo.result;
@@ -117,4 +123,3 @@ export default {
   }
 };
 </script>
-

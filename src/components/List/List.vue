@@ -4,7 +4,7 @@
       <ul
         class="mp-list-items"
         :style="{transform: `translate3d(0,${visibleItems[0]?visibleItems[0].top:0}px,0)`}"
-        @resize="loadItems"
+        @resize="loadIscrolltems"
       >
         <li
           v-for="(item,index) in visibleItems"

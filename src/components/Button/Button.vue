@@ -1,6 +1,10 @@
 <template>
   <button
-    :class="['mp-button',`mp-button-${type}`,round?'round':'',plain?'plain':'',disabled?'disabled':'']"
+    :class="['mp-button',`mp-button__${type}`,{
+      'mp-button__round':round,
+      'mp-button__plain':plain,
+      'mp-button__disabled':disabled,
+    }]"
     :disabled="disabled"
     v-on="$listeners"
   >
@@ -9,12 +13,12 @@
 </template>
 <script>
 export default {
-  name: "mp-button",
-  componentName: "MPButton",
+  name: 'mp-button',
+  componentName: 'MPButton',
   props: {
     type: {
       type: String,
-      default: "normal"
+      default: 'normal'
     },
     round: {
       type: Boolean,

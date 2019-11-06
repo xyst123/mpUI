@@ -1,50 +1,51 @@
 <template>
-  <div @click="handleClick" class="mp-radio-wrapper">
+  <div class="mp-radio-wrapper" @click="handleClick">
     <div
       v-if="type==='tag'"
-      :class="{'mp-radio-tag':true,'mp-radio-tag_active':value===chosenValue}"
+      :class="{'mp-radio-tag':true,'mp-radio-tag__active':value===chosenValue}"
     >
       <slot />
     </div>
-    <div v-else :class="{'mp-radio-normal':true,'mp-radio-normal_active':value===model}">
-      <div :class="['ring']"></div>
+    <div v-else :class="{'mp-radio-normal':true,'mp-radio-normal__active':value===model}">
+      <div :class="['ring']" />
       <slot />
     </div>
   </div>
 </template>
 <script>
-import emitter from "@/mixins/emitter";
+import emitter from '@/mixins/emitter';
+
 export default {
-  name: "mp-radio",
-  componentName: "MPRadio",
+  name: 'mp-radio',
+  componentName: 'MPRadio',
   mixins: [emitter],
   model: {
-    prop: "chosenValue",
-    event: "radio"
+    prop: 'chosenValue',
+    event: 'radio'
   },
   props: {
     type: {
       type: String,
-      default: "normal"
+      default: 'normal'
     },
     size: {
       type: String,
-      default: "normal"
+      default: 'normal'
     },
     chosenValue: {
       type: null,
-      default: ""
+      default: ''
     },
     value: {
       type: null,
-      default: ""
+      default: ''
     }
   },
   computed: {
     RadioGroup() {
       let parent = this.$parent;
       while (parent) {
-        if (parent.$options.componentName !== "MPRadioGroup") {
+        if (parent.$options.componentName !== 'MPRadioGroup') {
           parent = parent.$parent;
         } else {
           return parent;
@@ -59,12 +60,11 @@ export default {
   methods: {
     handleClick() {
       if (this.RadioGroup) {
-        this.dispatch("MPRadioGroup", "radio", [this.value]);
+        this.dispatch('MPRadioGroup', 'radio', [this.value]);
       } else {
-        this.$emit("radio", this.value);
+        this.$emit('radio', this.value);
       }
     }
   }
 };
 </script>
-
