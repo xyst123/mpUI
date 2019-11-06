@@ -1,5 +1,5 @@
 <template>
-  <div class="side-nav">
+  <div class="main-nav">
     <div
       v-for="(level1,index1) in level0"
       :key="`level1-${index1}`"
@@ -55,9 +55,9 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 @import url("../style/vars.less");
-.side-nav {
+.main-nav {
   width: 15%;
   margin: 32px 0;
   text-align: left;

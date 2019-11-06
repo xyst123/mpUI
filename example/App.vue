@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import MainHeader from './components/Header.vue';
-import MainNav from './components/Nav.vue';
+import MainHeader from './components/MainHeader.vue';
+import MainNav from './components/MainNav.vue';
 
 export default {
   components: {

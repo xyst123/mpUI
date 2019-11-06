@@ -1,7 +1,7 @@
 <template>
-  <div class="mobile-wrapper">
+  <div class="demo-mobile-wrapper">
     <div
-      class="mobile"
+      class="demo-mobile"
       :style="{width:`${mobileWidth}px`,height:`${mobileHeight}px`}"
     >
       <slot />
@@ -10,7 +10,7 @@
 </template>
 <script>
 export default {
-  name: 'mobile',
+  name: 'demo-mobile',
   data() {
     return {
       mobileWidth: 375,
@@ -21,7 +21,7 @@ export default {
 </script>
 <style lang="less" scoped>
 @import url("../style/vars.less");
-.mobile-wrapper{
+.demo-mobile-wrapper{
   position: relative;
   float: right;
   width: 372px;
@@ -29,7 +29,7 @@ export default {
   background: url("../images/mobile/mobile.png") no-repeat center center;
   background-size: 100%;
   overflow: hidden;
-  .mobile{
+  .demo-mobile{
     transform: scale(0.8);
     transform-origin: 0 0;
     position: absolute;

@@ -1,6 +1,6 @@
 <template>
-  <div class="header">
-    <div class="header-container">
+  <div class="main-header">
+    <div class="main-header-container">
       <h1>mp-ui</h1>
       <div class="link-list">
         <router-link
@@ -26,7 +26,7 @@ export default {
 </script>
 <style lang="less" scoped>
 @import url("../style/vars.less");
-.header {
+.main-header {
   height: 80px;
   padding: 0 48px;
   &-container {

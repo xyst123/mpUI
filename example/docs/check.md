@@ -1,13 +1,13 @@
 # Check复选框
 
-<mobile>
+<demo-mobile>
   <p>当前数据：{{foods}}<p>
   <mp-check-group v-model="foods" :max="2" style="padding:15px 0">
     <mp-check value="hamburger" label="汉堡" style="margin-right:30px"></mp-check>
     <mp-check value="cola" label="可乐" style="margin-right:30px"></mp-check>
     <mp-check value="steak" label="牛排" disabled></mp-check>
   </mp-check-group>
-</mobile>
+</demo-mobile>
 
 <script>
 export default {

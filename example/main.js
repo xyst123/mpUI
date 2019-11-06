@@ -3,10 +3,10 @@ import App from './App.vue';
 import router from './router';
 import MpUI from '../src';
 import '../src/style/index.less'
-import Mobile from './components/Mobile.vue';
+import DemoMobile from './components/DemoMobile.vue';
 import DemoBlock from './components/DemoBlock.vue';
 
-Vue.component('mobile', Mobile);
+Vue.component('demo-mobile', DemoMobile);
 Vue.component('demo-block', DemoBlock);
 Vue.config.productionTip = false;
 Vue.use(MpUI);
