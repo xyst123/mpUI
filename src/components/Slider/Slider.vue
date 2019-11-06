@@ -1,5 +1,8 @@
 <template>
-  <div class="mp-slider" :style="{left:`${map[step]}%`}" />
+  <div
+    class="mp-slider"
+    :style="{left:`${map[step]}%`}"
+  />
 </template>
 <script>
 export default {

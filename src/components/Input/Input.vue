@@ -1,5 +1,8 @@
 <template>
-  <div ref="input" class="mp-input">
+  <div
+    ref="input"
+    class="mp-input"
+  >
     <template v-if="type==='textarea'">
       <textarea
         v-bind="$attrs"
@@ -24,12 +27,19 @@
         @blur="$emit('blur')"
         @change="$emit('change')"
       >
-      <i v-if="value" class="icon-input-close" @click="clear">
+      <i
+        v-if="value"
+        class="icon-input-close"
+        @click="clear"
+      >
         <span class="path1" />
         <span class="path2" />
       </i>
     </template>
-    <p v-if="maxlength>0 && count" class="mp-input-counter">
+    <p
+      v-if="maxlength>0 && count"
+      class="mp-input-counter"
+    >
       {{ `${currentLength}/${maxlength}` }}
     </p>
   </div>

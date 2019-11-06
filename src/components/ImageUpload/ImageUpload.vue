@@ -1,19 +1,36 @@
 <template>
   <label class="mp-image-upload">
-    <div v-if="status===1" class="mp-image-upload-tip">
+    <div
+      v-if="status===1"
+      class="mp-image-upload-tip"
+    >
       <i class="icon-image-upload-uploading" />
       <p>图片上传中...</p>
     </div>
-    <div v-else-if="status===3" class="mp-image-upload-tip">
+    <div
+      v-else-if="status===3"
+      class="mp-image-upload-tip"
+    >
       <i class="icon-image-upload-fail" />
       <p>{{ failMessage }}</p>
     </div>
-    <img v-else :src="image" alt>
-    <i class="icon-input-close" @click.stop="handleDelete">
+    <img
+      v-else
+      :src="image"
+      alt
+    >
+    <i
+      class="icon-input-close"
+      @click.stop="handleDelete"
+    >
       <span class="path1" />
       <span class="path2" />
     </i>
-    <input type="file" v-bind="$attrs" @change="handleFileChange">
+    <input
+      type="file"
+      v-bind="$attrs"
+      @change="handleFileChange"
+    >
   </label>
 </template>
 <script>

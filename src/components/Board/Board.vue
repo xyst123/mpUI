@@ -1,6 +1,9 @@
 <template>
   <div class="mp-board">
-    <div v-if="title" class="mp-board-title">
+    <div
+      v-if="title"
+      class="mp-board-title"
+    >
       <slot name="prefixer" />
       <h3>{{ title }}</h3>
       <p>{{ error }}</p>

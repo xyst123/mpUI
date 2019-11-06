@@ -1,9 +1,18 @@
 <template>
-  <div class="mp-check" @click="handleClick">
+  <div
+    class="mp-check"
+    @click="handleClick"
+  >
     <div :class="['mp-check-ring',{'mp-check-ring__active':realChecked}]">
-      <i v-if="realChecked" class="icon-check-check" />
+      <i
+        v-if="realChecked"
+        class="icon-check-check"
+      />
     </div>
-    <span v-if="label" class="mp-check-label">{{ label }}</span>
+    <span
+      v-if="label"
+      class="mp-check-label"
+    >{{ label }}</span>
   </div>
 </template>
 <script>

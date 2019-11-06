@@ -1,12 +1,18 @@
 <template>
-  <div class="mp-radio-wrapper" @click="handleClick">
+  <div
+    class="mp-radio-wrapper"
+    @click="handleClick"
+  >
     <div
       v-if="type==='tag'"
       :class="{'mp-radio-tag':true,'mp-radio-tag__active':value===chosenValue}"
     >
       <slot />
     </div>
-    <div v-else :class="{'mp-radio-normal':true,'mp-radio-normal__active':value===model}">
+    <div
+      v-else
+      :class="{'mp-radio-normal':true,'mp-radio-normal__active':value===model}"
+    >
       <div :class="['ring']" />
       <slot />
     </div>

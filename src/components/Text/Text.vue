@@ -1,5 +1,8 @@
 <template>
-  <div class="mp-text" :style="{'height':`${height}px`}">
+  <div 
+    class="mp-text"
+    :style="{'height':`${height}px`}"
+  >
     <p
       ref="text"
       :style="{'max-height':`${maxHeight}px`,'line-height':`${lineHeight}px`}"
@@ -21,7 +24,8 @@
       v-html="hiddenContent"
     />
 
-    <i v-if="isOverflow" :class="{'icon-text-triangle':true,rotate:stretch}" @click="toggleStretch" />
+    <i v-if="isOverflow"
+:class="{'icon-text-triangle':true,rotate:stretch}" @click="toggleStretch" />
   </div>
 </template>
 
@@ -57,7 +61,7 @@ export default {
   },
   computed: {
     hiddenContent() {
-      return `  ${  this.content}`;
+      return `  ${this.content}`;
     },
     maxHeight() {
       if (!this.isOverflow) {

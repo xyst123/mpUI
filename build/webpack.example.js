@@ -39,12 +39,12 @@ const webpackConfig = {
   },
   module: {
     rules: [
-      // {
-      //   enforce: 'pre',
-      //   test: /\.(vue|jsx?)$/,
-      //   exclude: /node_modules/,
-      //   loader: 'eslint-loader'
-      // },
+      {
+        enforce: 'pre',
+        test: /\.(vue|jsx?)$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader'
+      },
       {
         test: /\.(jsx?|babel|es6)$/,
         loader: 'babel-loader',
