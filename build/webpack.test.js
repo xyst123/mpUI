@@ -1,6 +1,6 @@
 const merge = require('webpack-merge');
 const common = require('./webpack.common');
-const { resolve, getConfig } = require('../utils');
+const { resolve, getConfig } = require('./utils');
 
 const config = {
   entry: {

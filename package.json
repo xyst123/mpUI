@@ -69,6 +69,8 @@
     "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
+    "@babel/core": "^7.9.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "vue": "^2.6.10",
     "vue-router": "^3.1.3"
   }
